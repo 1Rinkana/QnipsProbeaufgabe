@@ -17,8 +17,8 @@ class MenuViewModel(
 
     fun loadData() = viewModelScope.launch {
         val result = withContext(Dispatchers.IO) { repository.getMenu() }
-        when(result.isSuccess) {
-            true -> _state.value = MenuState.ReadyMenuState(result.getOrNull())
+        when(result.isSuccess && result.getOrNull() != null) {
+            true -> _state.value = MenuState.ReadyMenuState(result.getOrThrow())
             false -> _state.value = MenuState.ErrorMenuState(result.exceptionOrNull())
         }
     }

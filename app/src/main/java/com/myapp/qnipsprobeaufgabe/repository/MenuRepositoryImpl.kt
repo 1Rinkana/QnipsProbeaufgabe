@@ -1,7 +1,7 @@
-package com.myapp.qnipsprobeaufgabe.dto.repository
+package com.myapp.qnipsprobeaufgabe.repository
 
-import com.myapp.qnipsprobeaufgabe.dto.JsonData
-import com.myapp.qnipsprobeaufgabe.dto.MenuApi
+import com.myapp.qnipsprobeaufgabe.data.JsonData
+import com.myapp.qnipsprobeaufgabe.data.api.MenuApi
 
 class MenuRepositoryImpl(private val api: MenuApi): MenuRepository {
     override suspend fun getMenu(): Result<JsonData> {

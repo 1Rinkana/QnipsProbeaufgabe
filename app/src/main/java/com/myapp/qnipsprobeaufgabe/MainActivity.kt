@@ -6,8 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.myapp.qnipsprobeaufgabe.dto.ClientAPI
-import com.myapp.qnipsprobeaufgabe.dto.repository.MenuRepositoryImpl
+import com.myapp.qnipsprobeaufgabe.data.api.MenuApi
+import com.myapp.qnipsprobeaufgabe.repository.MenuRepositoryImpl
 import com.myapp.qnipsprobeaufgabe.ui.menu.MenuViewModel
 import com.myapp.qnipsprobeaufgabe.ui.screen.MainScreen
 import com.myapp.qnipsprobeaufgabe.ui.theme.QnipsProbeaufgabeTheme
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         factoryProducer = {
             object : ViewModelProvider.Factory {
                 override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    return MenuViewModel(MenuRepositoryImpl(ClientAPI.createApi())) as T
+                    return MenuViewModel(MenuRepositoryImpl(MenuApi.createApi())) as T
                 }
             }
         }

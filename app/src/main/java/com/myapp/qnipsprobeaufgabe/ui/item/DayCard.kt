@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.myapp.qnipsprobeaufgabe.dto.JsonData
+import com.myapp.qnipsprobeaufgabe.data.JsonData
 
 @Composable
 fun DayCard(menu: JsonData, rowIndex: Int) {

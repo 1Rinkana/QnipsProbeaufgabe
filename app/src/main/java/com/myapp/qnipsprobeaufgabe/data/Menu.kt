@@ -1,4 +1,4 @@
-package com.myapp.qnipsprobeaufgabe.dto
+package com.myapp.qnipsprobeaufgabe.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

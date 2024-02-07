@@ -1,6 +1,6 @@
 package com.myapp.qnipsprobeaufgabe.ui.menu
 
-import com.myapp.qnipsprobeaufgabe.dto.JsonData
+import com.myapp.qnipsprobeaufgabe.data.JsonData
 
 sealed class MenuState {
     data object LoadingMenuState : MenuState()

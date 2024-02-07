@@ -50,6 +50,7 @@ fun SuccessScreen(viewModel: MenuViewModel) {
     LaunchedEffect(tabRowIndex) {
         pagerState.animateScrollToPage(tabRowIndex)
     }
+    
     LaunchedEffect(pagerState.currentPage, pagerState.isScrollInProgress) {
         if (!pagerState.isScrollInProgress) {
             tabRowIndex = pagerState.currentPage

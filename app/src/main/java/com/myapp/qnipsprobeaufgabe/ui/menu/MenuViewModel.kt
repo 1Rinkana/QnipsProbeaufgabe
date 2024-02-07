@@ -2,7 +2,7 @@ package com.myapp.qnipsprobeaufgabe.ui.menu
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.myapp.qnipsprobeaufgabe.dto.repository.MenuRepository
+import com.myapp.qnipsprobeaufgabe.repository.MenuRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow

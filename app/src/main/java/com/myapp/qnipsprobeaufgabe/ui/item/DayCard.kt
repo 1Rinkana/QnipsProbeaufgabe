@@ -36,7 +36,6 @@ fun DayCard(menu: JsonData, rowIndex: Int) {
                                 fontWeight = FontWeight.Normal,
                                 overflow = TextOverflow.Ellipsis,
                                 style = MaterialTheme.typography.titleMedium,
-                                onTextLayout = {},
                             )
 
                             val allergens = menu.allergens.values
@@ -49,7 +48,6 @@ fun DayCard(menu: JsonData, rowIndex: Int) {
                                 fontWeight = FontWeight.Normal,
                                 overflow = TextOverflow.Ellipsis,
                                 style = MaterialTheme.typography.bodyLarge,
-                                onTextLayout = {},
                             )
 
                             Text(
@@ -58,7 +56,6 @@ fun DayCard(menu: JsonData, rowIndex: Int) {
                                 fontWeight = FontWeight.Bold,
                                 overflow = TextOverflow.Ellipsis,
                                 style = MaterialTheme.typography.bodyLarge,
-                                onTextLayout = {},
                             )
                         }
                     }

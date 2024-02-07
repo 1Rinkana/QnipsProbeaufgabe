@@ -89,7 +89,6 @@ fun SuccessScreen(viewModel: MenuViewModel) {
                                 fontWeight = FontWeight.SemiBold,
                                 overflow = TextOverflow.Ellipsis,
                                 style = MaterialTheme.typography.titleMedium,
-                                onTextLayout = {},
                             )
                         },
                     )

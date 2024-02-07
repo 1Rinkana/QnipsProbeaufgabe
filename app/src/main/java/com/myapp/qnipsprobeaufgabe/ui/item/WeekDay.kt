@@ -19,6 +19,7 @@ fun WeekDay(dayIndex: Int) {
         6 -> "Sonntag"
         else -> ""
     }
+
     Text(
         text = day,
         modifier = Modifier,

@@ -26,22 +26,22 @@ data class Product(
     @SerialName("AllergenIds") val allergenIds: List<String>,
     @SerialName("ProductId") val productId: Int,
     @SerialName("Name") val name: String,
-    @SerialName("Price") val price: Price
+    @SerialName("Price") val price: Price,
 )
 
 @Serializable
 data class Day(
     @SerialName("Weekday") val weekday: Int,
-    @SerialName("ProductIds") val productIds: List<ProductId>
+    @SerialName("ProductIds") val productIds: List<ProductId>,
 )
 
 @Serializable
 data class ProductId(
-    @SerialName("ProductId") val id: Int
+    @SerialName("ProductId") val id: Int,
 )
 
 @Serializable
 data class Row(
     @SerialName("Name") val name: String,
-    @SerialName("Days") val days: List<Day>
+    @SerialName("Days") val days: List<Day>,
 )

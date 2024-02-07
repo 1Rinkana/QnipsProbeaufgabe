@@ -1,5 +1,6 @@
 package com.myapp.qnipsprobeaufgabe.ui.screen
 
+import androidx.compose.animation.Crossfade
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -11,11 +12,13 @@ import com.myapp.qnipsprobeaufgabe.ui.menu.MenuViewModel
 fun MainScreen(viewModel: MenuViewModel) {
     val state by viewModel.state.collectAsState()
 
-    Surface {
-        when(state) {
-            is MenuState.LoadingMenuState -> LoadingScreen()
-            is MenuState.ReadyMenuState -> SuccessScreen(viewModel)
-            is MenuState.ErrorMenuState -> ErrorScreen(viewModel)
+    Crossfade(targetState = state, label = "Main") { currentState ->
+        Surface {
+            when (currentState) {
+                is MenuState.LoadingMenuState -> LoadingScreen()
+                is MenuState.ReadyMenuState -> SuccessScreen(viewModel)
+                is MenuState.ErrorMenuState -> ErrorScreen(viewModel)
+            }
         }
     }
 }

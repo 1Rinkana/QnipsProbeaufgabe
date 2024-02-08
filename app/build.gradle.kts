@@ -80,4 +80,10 @@ dependencies {
 
     //Kotlin Coroutines dependency
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    // Koin core features
+    implementation("io.insert-koin:koin-core:3.5.3")
+
+    // Koin Android Jetpack Compose features
+    implementation("io.insert-koin:koin-androidx-compose:3.5.3")
 }

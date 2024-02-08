@@ -13,4 +13,3 @@ sealed class MenuState {
         val throwable: Throwable?,
     ): MenuState()
 }
-

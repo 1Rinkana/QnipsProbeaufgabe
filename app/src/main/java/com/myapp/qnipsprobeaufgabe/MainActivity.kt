@@ -13,24 +13,12 @@ import com.myapp.qnipsprobeaufgabe.ui.screen.MainScreen
 import com.myapp.qnipsprobeaufgabe.ui.theme.QnipsProbeaufgabeTheme
 
 class MainActivity : ComponentActivity() {
-
-    private val viewModel by viewModels<MenuViewModel>(
-        factoryProducer = {
-            object : ViewModelProvider.Factory {
-                override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    return MenuViewModel(MenuRepositoryImpl(MenuApi.createApi())) as T
-                }
-            }
-        }
-    )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             QnipsProbeaufgabeTheme {
-                MainScreen(viewModel)
+                MainScreen()
             }
         }
-        viewModel.loadData()
     }
 }

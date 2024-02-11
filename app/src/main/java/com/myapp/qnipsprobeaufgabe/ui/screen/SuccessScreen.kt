@@ -74,7 +74,7 @@ fun SuccessScreen(viewModel: MenuViewModel) {
         Column(
             modifier = Modifier
                 .padding(paddingValues)
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             PrimaryTabRow(selectedTabIndex = tabRowIndex) {
                 titles.forEachIndexed { index, title ->
@@ -100,17 +100,17 @@ fun SuccessScreen(viewModel: MenuViewModel) {
                 state = pagerState,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f)
+                    .weight(1f),
             ) { rowIndex ->
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(8.dp)
+                        .padding(8.dp),
                 ) {
                     item {
                        DayCard(
                            menu = menu,
-                           rowIndex = rowIndex
+                           rowIndex = rowIndex,
                        )
                     }
                 }

@@ -3,6 +3,8 @@ package com.myapp.qnipsprobeaufgabe.ui.screen
 import androidx.compose.animation.Crossfade
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import com.myapp.qnipsprobeaufgabe.ui.menu.MenuState
@@ -12,6 +14,10 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun MainScreen(vm: MenuViewModel = koinViewModel()) {
     val state by vm.state.collectAsState()
+
+    LaunchedEffect(Unit) {
+        vm.loadData()
+    }
 
     Crossfade(targetState = state, label = "Main") { currentState ->
         Surface {

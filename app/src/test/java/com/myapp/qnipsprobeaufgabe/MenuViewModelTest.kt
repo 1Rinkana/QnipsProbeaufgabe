@@ -19,10 +19,8 @@ import org.junit.Test
 import kotlin.test.assertIs
 
 class MenuViewModelTest {
-
-    private val repo: MenuRepository = mockk(relaxed = true)
+    private val repo: MenuRepository = mockk(relaxUnitFun = true)
     private  var viewModel: MenuViewModel = MenuViewModel(repo)
-
 
     private val successJsonData = JsonData(
         allergens = mapOf(
@@ -65,15 +63,24 @@ class MenuViewModelTest {
 
     @ExperimentalCoroutinesApi
     @Test
+    fun `the start state is loading`() = runTest {
+        //WHEN
+        //ViewModel has just been initialized
+
+        //THEN
+        assertIs<MenuState.LoadingMenuState>(viewModel.state.value)
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
     fun `returning a successful result changes the state to successful`() = runTest {
         //WHEN
-        coEvery { repo.getMenu() } returns Result.success<JsonData>(successJsonData)
+        coEvery { repo.getMenu() } returns Result.success(successJsonData)
 
         viewModel.loadData().join()
         coVerify { repo.getMenu() }
 
         //THEN
-        println("Current state: ${viewModel.state.value}")
         assertIs<MenuState.ReadyMenuState>(viewModel.state.value)
     }
 
@@ -87,14 +94,6 @@ class MenuViewModelTest {
         coVerify { repo.getMenu() }
 
         //THEN
-        println("Current state: ${viewModel.state.value}")
         assertIs<MenuState.ErrorMenuState>(viewModel.state.value)
-    }
-
-    @ExperimentalCoroutinesApi
-    @Test
-    fun `the start state is loading`() = runTest {
-        //THEN
-        assertIs<MenuState.LoadingMenuState>(viewModel.state.value)
     }
 }

@@ -17,7 +17,7 @@ class MenuViewModel(
     private val _state: MutableStateFlow<MenuState> = MutableStateFlow(MenuState.LoadingMenuState)
     val state: StateFlow<MenuState> = _state.asStateFlow()
 
-    private fun loadData() = viewModelScope.launch {
+    fun loadData() = viewModelScope.launch(Dispatchers.Default) {
         val result = withContext(Dispatchers.IO) { repository.getMenu() }
         delay(2000)
         when(result.isSuccess && result.getOrNull() != null) {

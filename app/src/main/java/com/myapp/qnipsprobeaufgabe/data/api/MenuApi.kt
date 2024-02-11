@@ -11,7 +11,7 @@ import retrofit2.http.GET
 interface MenuApi {
     @GET("/dbapi/ha")
     suspend fun getMenu(): Response<JsonData>
-    companion object MenuAPIFactory {
+    companion object Factory {
         private const val API_URL = "https://my.qnips.io/"
         private val contentType = MediaType.get("application/json")
 

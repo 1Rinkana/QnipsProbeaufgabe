@@ -33,10 +33,10 @@ fun DayCard(menu: JsonData, rowIndex: Int) {
         var showProducts by remember { mutableStateOf(false) }
         ElevatedCard(
             modifier = Modifier
+                .fillMaxWidth()
                 .padding(8.dp)
-                .clickable { showProducts = !showProducts }
-                .fillMaxWidth(),
-            shape = RoundedCornerShape(8.dp),
+                .clip(RoundedCornerShape(8.dp))
+                .clickable { showProducts = !showProducts },
         ) {
             Column(
                 modifier = Modifier

@@ -12,7 +12,7 @@ interface MenuApi {
     @GET("/dbapi/ha")
     suspend fun getMenu(): Response<JsonData>
     companion object Factory {
-        private const val API_URL = "https://my.qnips.io/"
+        private const val API_URL = "https://myprelive.qnips.com/"
         private val contentType = MediaType.get("application/json")
 
         fun createApi(): MenuApi {

@@ -43,5 +43,5 @@ data class ProductId(
 @Serializable
 data class Row(
     @SerialName("Name") val name: String,
-    @SerialName("Days") val days: List<Day>,
+    @SerialName("Days") var days: MutableList<Day>,
 )
